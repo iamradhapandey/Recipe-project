@@ -2,8 +2,11 @@ import React, { useContext } from "react";
 import { useForm } from "react-hook-form";
 import { nanoid } from "nanoid";
 import { recipeContext } from "../Context/RecipeContext";
+import { toast } from "react-toastify";
+import { useNavigate } from "react-router-dom"; // ✅ Import useNavigate for navigation
 
 const Create = () => {
+  const navigate = useNavigate(); // ✅ Import useNavigate for navigation
   const { data, setData } = useContext(recipeContext); // ✅ recipe data from context
   const { register, handleSubmit, reset } = useForm();
 
@@ -17,8 +20,22 @@ const Create = () => {
     // ✅ Update context state
     setData(copyData);
 
+    toast.success("Recipe created successfully!", {
+      position: "top-right",
+      autoClose: 3000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+    });
+    
+
+    
+
     // ✅ Reset form
     reset();
+   navigate("/recipice"); // ✅ Navigate to the recipe list page
   };
 
   return (
@@ -66,10 +83,10 @@ const Create = () => {
         className="block border-b outline-0 p-2 mt-2"
         {...register("category")}
       >
-        <option value="boil">Boil</option>
-        <option value="fry">Fry</option>
-        <option value="bake">Bake</option>
-        <option value="steam">Steam</option>
+        <option value="Breakfast">Breakfast</option>
+        <option value="Lunch">Lunch</option>
+        <option value="Dinner">Dinner</option>
+        <option value="Supper">Supper</option>
       </select>
 
       <button
