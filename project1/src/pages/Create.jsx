@@ -11,30 +11,14 @@ const Create = () => {
   const { register, handleSubmit, reset } = useForm();
 
   const onSubmit = (recipe) => {
-    // ✅ Add id to new recipe
-    const newRecipe = { ...recipe, id: nanoid() };
-
-    // ✅ Spread existing data (array), then add newRecipe
-    const copyData = [...data, newRecipe];
-
-    // ✅ Update context state
+    
+    recipe.id = nanoid() ;
+    const copyData = [...data];
+    copyData.push(recipe);
     setData(copyData);
-
-    toast.success("Recipe created successfully!", {
-      position: "top-right",
-      autoClose: 3000,
-      hideProgressBar: false,
-      closeOnClick: true,
-      pauseOnHover: true,
-      draggable: true,
-      progress: undefined,
-    });
-    
-
-    
-
-    // ✅ Reset form
-    reset();
+    localStorage.setItem("recipes", JSON.stringify(copyData));
+    toast.success("Recipe created successfully!")
+      reset();
    navigate("/recipice"); // ✅ Navigate to the recipe list page
   };
 

@@ -7,7 +7,7 @@ const RecipeCard = ({ recipe }) => {
   const { id, image, title, chef, description} = recipe;
 
   return (
-    <Link to={`/recipice/details/${id}`} className="   duration-150 hover:scale-105 mr-3 mb-03 block border p-4 rounded shadow hover:shadow-lg transition">
+    <Link to={`/recipice/details/${id}`} className="duration-150 hover:scale-105 mr-3 mb-03 block border p-4 rounded shadow hover:shadow-lg transition">
       <img
         src={image || "https://via.placeholder.com/300x200"} // ✅ fallback image
         alt={title || "No title"}

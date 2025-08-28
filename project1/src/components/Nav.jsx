@@ -10,6 +10,7 @@ const Nav = () => {
         <NavLink className={(e)=>(e.isActive ? "text-pink-300" : "")} to="/about">About</NavLink>
      
        <NavLink className={(e)=>(e.isActive ? "text-pink-300" : "")} to="/create-Recipice">Create Recipice</NavLink>
+       <NavLink className={(e)=>(e.isActive ? "text-pink-300" : "")} to="/fav">Favourite</NavLink>
        {/* <NavLink className={(e)=>(e.isActive ? "text-pink-300" : "")} to="/recipice">Recipice</NavLink> */}
        
       
