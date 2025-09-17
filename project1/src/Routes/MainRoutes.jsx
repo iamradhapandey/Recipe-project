@@ -7,6 +7,7 @@ import Recipice from "../pages/Recipice";   // 👈 yeh import zaroori hai
 import SingleRecipe from "../pages/SingleRecipe"; // 👈 yeh import zaroori hai
 import PageNotFound from "../pages/PageNotFound"; // 👈 yeh import zaroori hai
 import Fav from "../pages/Fav"; // 👈 yeh import zaroori hai
+import RecipeDetails from '../pages/RecipeDetails';
 
 const MainRoutes = () => {
   return (
@@ -14,6 +15,7 @@ const MainRoutes = () => {
       <Route path="/home" element={<Home />} />       {/* default route */}
       <Route path="/about" element={<About />} />
       <Route path="/recipice" element={<Recipice/>} />
+      <Route path="/recipe/:id" element={<RecipeDetails />} />
       <Route path="/recipice/details/:id" element={<SingleRecipe/>} />
       <Route path="/create-recipice" element={<Create />} />
       <Route path="/fav" element={<Fav />} />
