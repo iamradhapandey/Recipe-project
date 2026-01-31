@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Nav from "./components/Nav"; // ✅ Import Nav, not nav
 import MainRoutes from "./Routes/MainRoutes";
 import { ToastContainer } from "react-toastify"; // ✅ Import ToastContainer for notifications
@@ -11,6 +11,9 @@ const App = () => {
       <ToastContainer />
     </div>
   );
-};
+
+
+}
+
 
 export default App;

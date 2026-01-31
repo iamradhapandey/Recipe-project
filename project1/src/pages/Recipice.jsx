@@ -32,12 +32,14 @@ const Recipice = () => {
   }
 
   return (
-    <div className="flex flex-wrap gap-4 p-4">
+    <div   className="flex flex-wrap gap-4 p-4">
       {recipes.map((recipe) => (
         <RecipeCard key={recipe.id} recipe={recipe} />
       ))}
     </div>
   );
+
+
 };
 
 export default Recipice;
